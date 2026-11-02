@@ -1,0 +1,49 @@
+[workspace]
+resolver = "2"
+members = ["lanterna", "lanterna-mcp"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.89.0"
+license = "MIT"
+repository = "https://github.com/pleme-io/lanterna"
+homepage = "https://github.com/pleme-io/lanterna"
+authors = ["pleme-io"]
+description = "lanterna (lantern) — a typed, observe-only ClickHouse HTTP client and MCP server: a closed route enum, a closed Question enum with one SQL renderer, readonly bounds on every request, and kotae's four outcomes at the border"
+
+[workspace.dependencies]
+lanterna = { path = "lanterna", version = "0.1.0" }
+
+kotae = "0.1"
+handan = "0.1"
+
+shikumi = "0.1"
+tatara-lisp = "0.3"
+
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+rustls = { version = "0.23", default-features = false }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "io-std", "time", "net"] }
+url = "2"
+bytes = "1.9"
+
+rmcp = { version = "1.4", features = ["server", "transport-io", "macros"] }
+schemars = "1"
+
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = "0.9"
+thiserror = "2"
+zeroize = "1"
+clap = { version = "4", features = ["derive"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+blake3 = "1"
+tempfile = "3"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "z"
+strip = true

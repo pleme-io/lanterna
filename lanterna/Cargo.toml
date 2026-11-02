@@ -1,0 +1,42 @@
+[package]
+name = "lanterna"
+description = "lanterna (lantern) — typed observe-only ClickHouse client: a transport seam, a closed route enum, a closed Question enum with exactly one SQL renderer, readonly bounds on every request, and an outcome sum (found / empty / refused / blind) that never collapses two answers into one"
+keywords = ["clickhouse", "sql", "observability", "typed", "mcp"]
+categories = ["api-bindings", "web-programming::http-client"]
+readme = "../README.md"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+
+[features]
+mock = []
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+
+[dependencies]
+kotae.workspace = true
+handan.workspace = true
+shikumi.workspace = true
+tatara-lisp.workspace = true
+reqwest.workspace = true
+rustls.workspace = true
+tokio.workspace = true
+url.workspace = true
+bytes.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+serde_yaml.workspace = true
+thiserror.workspace = true
+zeroize.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+blake3.workspace = true
+tempfile.workspace = true
