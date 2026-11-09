@@ -30,6 +30,4 @@
   :deps ()
   :deps-dev ()
 
-  :exe ("lanterna-mcp")
-
-  :caixotes ("lanterna"))
+  :caixotes ("lanterna-mcp" "lanterna"))
