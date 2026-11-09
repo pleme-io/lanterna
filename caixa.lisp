@@ -32,4 +32,4 @@
 
   :exe ("lanterna-mcp")
 
-  :bibliotecas ("lanterna"))
+  :caixotes ("lanterna"))
